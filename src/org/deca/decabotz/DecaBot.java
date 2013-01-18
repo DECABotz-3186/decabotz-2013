@@ -5,14 +5,14 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.daytonearlycollegeacadmey.decabotz;
+package org.deca.decabotz;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import org.daytonearlycollegeacadmey.decabotz.commands.CommandBase;
-import org.daytonearlycollegeacadmey.decabotz.commands.ExampleCommand;
+import org.deca.decabotz.commands.CommandBase;
+import org.deca.decabotz.commands.ExampleCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
