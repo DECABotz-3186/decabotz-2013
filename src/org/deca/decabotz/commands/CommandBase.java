@@ -1,10 +1,10 @@
-package org.daytonearlycollegeacadmey.decabotz.commands;
+package org.deca.decabotz.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.daytonearlycollegeacadmey.decabotz.OI;
-import org.daytonearlycollegeacadmey.decabotz.subsystems.DriveTrain;
-import org.daytonearlycollegeacadmey.decabotz.subsystems.ExampleSubsystem;
+import org.deca.decabotz.OI;
+import org.deca.decabotz.subsystems.DriveTrain;
+import org.deca.decabotz.subsystems.ExampleSubsystem;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.

@@ -1,4 +1,4 @@
-package org.daytonearlycollegeacadmey.decabotz;
+package org.deca.decabotz;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
