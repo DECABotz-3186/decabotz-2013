@@ -1,5 +1,5 @@
 
-package org.daytonearlycollegeacadmey.decabotz.subsystems;
+package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 

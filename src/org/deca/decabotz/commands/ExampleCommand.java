@@ -1,5 +1,5 @@
 
-package org.daytonearlycollegeacadmey.decabotz.commands;
+package org.deca.decabotz.commands;
 
 /**
  *

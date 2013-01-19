@@ -2,14 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.daytonearlycollegeacadmey.decabotz.subsystems;
+package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import org.daytonearlycollegeacadmey.decabotz.RobotMap;
-import org.daytonearlycollegeacadmey.decabotz.commands.DualStickDrive;
+import org.deca.decabotz.RobotMap;
+import org.deca.decabotz.commands.DualStickDrive;
 
 /**
  *

@@ -1,5 +1,5 @@
 
-package org.daytonearlycollegeacadmey.decabotz;
+package org.deca.decabotz;
 
 import edu.wpi.first.wpilibj.Joystick;
 
