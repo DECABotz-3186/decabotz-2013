@@ -12,10 +12,10 @@ public class OI {
     Joystick leftJoyStick = new Joystick(RobotMap.leftJoyStickID);
     Joystick rightJoyStick = new Joystick(RobotMap.rightJoyStickID);
         public double getLeftStick(){
-            return leftJoyStick.getY();
+            return -leftJoyStick.getY();
         }
         public double getRightStick(){
-            return leftJoyStick.getX();
+            return -rightJoyStick.getY();
         }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
