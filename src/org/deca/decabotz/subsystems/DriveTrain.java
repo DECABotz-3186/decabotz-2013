@@ -20,17 +20,13 @@ public class DriveTrain extends Subsystem {
     // here. Call these from Commands.
     private RobotDrive drive;
     public DriveTrain(){
-        CANJaguar frontLeftJag;
-        CANJaguar backLeftJag;
-        CANJaguar frontRightJag;
-        CANJaguar backRightJag;
+        CANJaguar leftJag;
+        CANJaguar rightJag;
                 
         try{
-            frontLeftJag = new CANJaguar(RobotMap.frontLeftJagID);
-            backLeftJag = new CANJaguar(RobotMap.backLeftJagID);
-            frontRightJag = new CANJaguar(RobotMap.frontRightJagID);
-            backRightJag = new CANJaguar(RobotMap.backRightJagID);
-            drive = new RobotDrive(frontLeftJag, backLeftJag, frontRightJag, backRightJag);
+            leftJag = new CANJaguar(RobotMap.leftJagDriveID);
+            rightJag = new CANJaguar(RobotMap.rightJagDriveID);
+            drive = new RobotDrive(leftJag, rightJag);
             drive.setSafetyEnabled(false);
         }
         catch (CANTimeoutException e) {
