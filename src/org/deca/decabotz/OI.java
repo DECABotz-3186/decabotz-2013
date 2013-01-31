@@ -9,13 +9,12 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
     
-    Joystick leftJoyStick = new Joystick(RobotMap.leftJoyStickID);
-    Joystick rightJoyStick = new Joystick(RobotMap.rightJoyStickID);
+    Joystick gamePad = new Joystick(RobotMap.gamepadID);
         public double getLeftStick(){
-            return -leftJoyStick.getY();
+            return -gamePad.getRawAxis(2);
         }
         public double getRightStick(){
-            return -rightJoyStick.getY();
+            return -gamePad.getRawAxis(5);
         }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
