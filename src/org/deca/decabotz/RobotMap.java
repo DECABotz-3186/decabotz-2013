@@ -18,6 +18,6 @@ public class RobotMap {
     // public static final int rangefinderModule = 1;
     public static final int rightJagDriveID = 2,
                             leftJagDriveID = 3,
-                            leftJoyStickID = 1,
-                            rightJoyStickID = 2;
+                            gamepadID = 1;
+                           
 }
