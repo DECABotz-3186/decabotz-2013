@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.OI;
 import org.deca.decabotz.subsystems.DriveTrain;
 import org.deca.decabotz.subsystems.ExampleSubsystem;
+import org.deca.decabotz.subsystems.Lift;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -15,7 +16,8 @@ import org.deca.decabotz.subsystems.ExampleSubsystem;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    public static DriveTrain driveTrain = new DriveTrain(); 
+    public static DriveTrain driveTrain = new DriveTrain();
+    public static Lift lift = new Lift();
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 
