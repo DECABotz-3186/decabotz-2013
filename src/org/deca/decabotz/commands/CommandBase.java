@@ -18,9 +18,9 @@ import org.deca.decabotz.subsystems.RearLifter;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    public static DriveTrain driveTrain = new DriveTrain();
-    public static FrontLifter frontLifter = new FrontLifter();
-    public static RearLifter rearLifter = new RearLifter();
+    public static DriveTrain driveTrain;
+    public static FrontLifter frontLifter;
+    public static RearLifter rearLifter;
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 
@@ -31,6 +31,23 @@ public abstract class CommandBase extends Command {
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
         oi = new OI();
+        
+        // Pass if CAN errors happen.
+        try {
+            driveTrain = new DriveTrain();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
+        try {
+            frontLifter = new FrontLifter();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
+        try {
+            rearLifter = new RearLifter();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(exampleSubsystem);

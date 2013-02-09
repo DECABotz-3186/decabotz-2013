@@ -17,11 +17,11 @@ public class RearLifter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     CANJaguar rearLiftJag;
-    public RearLifter(){
+    public RearLifter() throws CANTimeoutException {
         try {
             rearLiftJag = new CANJaguar(RobotMap.rearLiftJagID);
         } catch (CANTimeoutException ex) {
-            ex.printStackTrace();
+            throw ex;
         }
     }
     public void initDefaultCommand() {

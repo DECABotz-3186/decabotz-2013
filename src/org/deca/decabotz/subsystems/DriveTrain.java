@@ -19,7 +19,7 @@ public class DriveTrain extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     private RobotDrive drive;
-    public DriveTrain(){
+    public DriveTrain() throws CANTimeoutException {
         CANJaguar leftJag;
         CANJaguar rightJag;
                 
@@ -30,7 +30,7 @@ public class DriveTrain extends Subsystem {
             drive.setSafetyEnabled(false);
         }
         catch (CANTimeoutException e) {
-            e.printStackTrace();
+            throw e;
         }
     }
     public void initDefaultCommand() {
