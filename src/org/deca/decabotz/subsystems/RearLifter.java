@@ -8,19 +8,18 @@ import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.deca.decabotz.RobotMap;
-import org.deca.decabotz.commands.Kick;
 
 /**
  *
  * @author Sciencelab
  */
-public class ButtKicker extends Subsystem {
+public class RearLifter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    CANJaguar buttKickerJag;
-    public ButtKicker() {
+    CANJaguar rearLiftJag;
+    public RearLifter(){
         try {
-            buttKickerJag = new CANJaguar(RobotMap.buttKickerJagID);
+            rearLiftJag = new CANJaguar(RobotMap.rearLiftJagID);
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }
@@ -28,11 +27,11 @@ public class ButtKicker extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-        setDefaultCommand(new Kick());
+        setDefaultCommand(new org.deca.decabotz.commands.RearLift());
     }
-    public void setKicker(double speedValue) {
+    public void setRearLifter(double speedValue) {
         try {
-            buttKickerJag.setX(speedValue);
+            rearLiftJag.setX(speedValue);
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }

@@ -18,9 +18,9 @@ public class RobotMap {
     // public static final int rangefinderModule = 1;
     public static final int rightJagDriveID = 2,
                             leftJagDriveID = 3,
-                            liftJagID = 4,
-                            operatorJoystickID = 2,
-                            buttKickerJagID = 5,
+                            frontLiftJagID = 4,
+                            operatorGamepadID = 2,
+                            rearLiftJagID = 5,
                             gamepadID = 1;
                            
 }

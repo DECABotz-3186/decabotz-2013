@@ -8,22 +8,22 @@ import edu.wpi.first.wpilibj.Joystick;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    Joystick operatorJoystick = new Joystick(RobotMap.operatorJoystickID);
+    Joystick operatorGamepad = new Joystick(RobotMap.operatorGamepadID);
     
     Joystick gamePad = new Joystick(RobotMap.gamepadID);
         public double getLeftStick(){
             return -gamePad.getRawAxis(2);
         }
         public double getRightStick(){
-            return -gamePad.getRawAxis(5);
+            return gamePad.getRawAxis(5);
             
         }
         public double getOperatorStick() {
-            return operatorJoystick.getX();
+            return operatorGamepad.getRawAxis(2);
         }
                 
         public double getOperatorThrottle() {
-            return operatorJoystick.getThrottle();
+            return operatorGamepad.getRawAxis(5);
         }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

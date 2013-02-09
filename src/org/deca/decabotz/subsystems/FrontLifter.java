@@ -8,17 +8,16 @@ import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.deca.decabotz.RobotMap;
-import org.deca.decabotz.commands.MoveLift;
 
 /**
  *
  * @author Sciencelab
  */
-public class Lift extends Subsystem {
+public class FrontLifter extends Subsystem {
     CANJaguar liftJag;
-    public Lift(){
+    public FrontLifter(){
         try {
-            liftJag = new CANJaguar(RobotMap.liftJagID);
+            liftJag = new CANJaguar(RobotMap.frontLiftJagID);
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }
@@ -33,11 +32,13 @@ public class Lift extends Subsystem {
      
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-        setDefaultCommand(new MoveLift());
+        setDefaultCommand(new org.deca.decabotz.commands.FrontLift());
     }
     public void setLift (double speedValue){
         try {
+            if(liftJag != null){
             liftJag.setX(speedValue);
+            }
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }

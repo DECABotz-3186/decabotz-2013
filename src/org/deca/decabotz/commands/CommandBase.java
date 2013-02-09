@@ -1,12 +1,13 @@
 package org.deca.decabotz.commands;
 
+import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.OI;
-import org.deca.decabotz.subsystems.ButtKicker;
 import org.deca.decabotz.subsystems.DriveTrain;
 import org.deca.decabotz.subsystems.ExampleSubsystem;
-import org.deca.decabotz.subsystems.Lift;
+import org.deca.decabotz.subsystems.FrontLifter;
+import org.deca.decabotz.subsystems.RearLifter;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -18,8 +19,8 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static DriveTrain driveTrain = new DriveTrain();
-    public static Lift lift = new Lift();
-    public static ButtKicker buttKicker = new ButtKicker();
+    public static FrontLifter frontLifter = new FrontLifter();
+    public static RearLifter rearLifter = new RearLifter();
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 
@@ -38,6 +39,7 @@ public abstract class CommandBase extends Command {
     public CommandBase(String name) {
         super(name);
     }
+        
 
     public CommandBase() {
         super();

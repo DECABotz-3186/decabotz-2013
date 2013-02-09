@@ -8,12 +8,12 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class MoveLift extends CommandBase {
+public class FrontLift extends CommandBase {
     
-    public MoveLift() {
+    public FrontLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(lift);
+        requires(frontLifter);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class MoveLift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        lift.setLift(oi.getOperatorStick());
+        frontLifter.setLift(oi.getOperatorStick());
     }
 
     // Make this return true when this Command no longer needs to run execute()

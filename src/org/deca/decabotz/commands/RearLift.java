@@ -8,12 +8,12 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class Kick extends CommandBase {
+public class RearLift extends CommandBase {
     
-    public Kick() {
+    public RearLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(buttKicker);
+        requires(rearLifter);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class Kick extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        buttKicker.setKicker(oi.getOperatorThrottle());
+        rearLifter.setRearLifter(oi.getOperatorThrottle());
     }
 
     // Make this return true when this Command no longer needs to run execute()
