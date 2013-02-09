@@ -20,6 +20,7 @@ public class RobotMap {
                             leftJagDriveID = 3,
                             liftJagID = 4,
                             operatorJoystickID = 2,
+                            buttKickerJagID = 5,
                             gamepadID = 1;
                            
 }

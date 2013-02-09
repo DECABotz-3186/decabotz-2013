@@ -3,6 +3,7 @@ package org.deca.decabotz.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.OI;
+import org.deca.decabotz.subsystems.ButtKicker;
 import org.deca.decabotz.subsystems.DriveTrain;
 import org.deca.decabotz.subsystems.ExampleSubsystem;
 import org.deca.decabotz.subsystems.Lift;
@@ -18,6 +19,7 @@ public abstract class CommandBase extends Command {
     public static OI oi;
     public static DriveTrain driveTrain = new DriveTrain();
     public static Lift lift = new Lift();
+    public static ButtKicker buttKicker = new ButtKicker();
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 
