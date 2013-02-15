@@ -5,9 +5,11 @@
 package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.CANJaguar;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.deca.decabotz.RobotMap;
+import org.deca.decabotz.commands.RetractRearLift;
 
 /**
  *
@@ -16,24 +18,35 @@ import org.deca.decabotz.RobotMap;
 public class RearLifter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    CANJaguar rearLiftJag;
-    public RearLifter() throws CANTimeoutException {
-        try {
-            rearLiftJag = new CANJaguar(RobotMap.rearLiftJagID);
-        } catch (CANTimeoutException ex) {
-            throw ex;
-        }
+    Solenoid solenoidOneExtend;
+    Solenoid solenoidOneRetract;
+    Solenoid solenoidTwoExtend;
+    Solenoid solenoidTwoRetract;
+            
+    public RearLifter() {
+        solenoidOneExtend = new Solenoid(RobotMap.solenoidOneExtendID);
+        solenoidOneRetract = new Solenoid(RobotMap.solenoidOneRetractID);
+        solenoidTwoExtend = new Solenoid(RobotMap.solenoidTwoExtendID);
+        solenoidTwoRetract = new Solenoid(RobotMap.solenoidTwoRetractID);
+                
+        
     }
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
-        setDefaultCommand(new org.deca.decabotz.commands.RearLift());
+        setDefaultCommand(new RetractRearLift());
+        
     }
-    public void setRearLifter(double speedValue) {
-        try {
-            rearLiftJag.setX(speedValue);
-        } catch (CANTimeoutException ex) {
-            ex.printStackTrace();
-        }
+    
+    public void LiftExtend() {
+        solenoidOneExtend.set(true);
+        solenoidTwoExtend.set(true);
+        solenoidOneRetract.set(false);
+        solenoidTwoRetract.set(false);
+    }
+    
+    public void LiftRetract() {
+        solenoidOneExtend.set(false);
+        solenoidTwoExtend.set(false);
+        solenoidOneRetract.set(true);
+        solenoidTwoRetract.set(true);
     }
 }

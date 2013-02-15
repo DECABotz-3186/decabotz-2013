@@ -20,7 +20,11 @@ public class RobotMap {
                             leftJagDriveID = 3,
                             frontLiftJagID = 4,
                             operatorGamepadID = 2,
-                            rearLiftJagID = 5,
+                            solenoidOneExtendID = 1,
+                            solenoidOneRetractID = 2,
+                            solenoidTwoExtendID = 3,
+                            solenoidTwoRetractID = 4,
+                            rearLiftActivateID = 1,
                             gamepadID = 1;
                            
 }
