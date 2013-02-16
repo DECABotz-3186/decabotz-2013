@@ -9,7 +9,7 @@ package org.deca.decabotz.commands;
  * @author Sciencelab
  */
 public class FrontLift extends CommandBase {
-    
+
     public FrontLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

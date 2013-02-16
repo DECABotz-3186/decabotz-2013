@@ -9,7 +9,7 @@ package org.deca.decabotz.commands;
  * @author Sciencelab
  */
 public class ExtendRearLift extends CommandBase {
-    
+
     public ExtendRearLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

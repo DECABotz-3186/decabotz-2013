@@ -15,29 +15,30 @@ import org.deca.decabotz.commands.FrontLift;
  * @author Sciencelab
  */
 public class FrontLifter extends Subsystem {
+
     CANJaguar liftJag;
-    public FrontLifter() throws CANTimeoutException{
+
+    public FrontLifter() throws CANTimeoutException {
         try {
             liftJag = new CANJaguar(RobotMap.frontLiftJagID);
         } catch (CANTimeoutException ex) {
             throw ex;
         }
-        
+
     }
-            
+
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
-    
     public void initDefaultCommand() {
-     
+
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new FrontLift());
     }
-    public void setLift (double speedValue){
+
+    public void setLift(double speedValue) {
         try {
-            if(liftJag != null){
+            if (liftJag != null) {
                 liftJag.setX(speedValue);
             }
         } catch (CANTimeoutException ex) {

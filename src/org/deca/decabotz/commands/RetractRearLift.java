@@ -9,11 +9,11 @@ package org.deca.decabotz.commands;
  * @author Sciencelab
  */
 public class RetractRearLift extends CommandBase {
-    
+
     public RetractRearLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(rearLifter); 
+        requires(rearLifter);
     }
 
     // Called just before this Command runs the first time

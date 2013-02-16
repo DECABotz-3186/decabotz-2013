@@ -18,26 +18,29 @@ import org.deca.decabotz.commands.DualStickDrive;
 public class DriveTrain extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+
     private RobotDrive drive;
+
     public DriveTrain() throws CANTimeoutException {
         CANJaguar leftJag;
         CANJaguar rightJag;
-                
-        try{
+
+        try {
             leftJag = new CANJaguar(RobotMap.leftJagDriveID);
             rightJag = new CANJaguar(RobotMap.rightJagDriveID);
             drive = new RobotDrive(leftJag, rightJag);
             drive.setSafetyEnabled(false);
-        }
-        catch (CANTimeoutException e) {
+        } catch (CANTimeoutException e) {
             throw e;
         }
     }
+
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new DualStickDrive());
     }
+
     public void tankDrive(double leftStick, double rightStick) {
         drive.tankDrive(leftStick, rightStick);
     }

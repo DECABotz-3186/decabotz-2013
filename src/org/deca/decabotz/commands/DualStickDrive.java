@@ -9,9 +9,9 @@ package org.deca.decabotz.commands;
  * @author decabots
  */
 public class DualStickDrive extends CommandBase {
-    
+
     public DualStickDrive() {
-            requires(driveTrain);
+        requires(driveTrain);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -22,7 +22,7 @@ public class DualStickDrive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveTrain.tankDrive(oi.getLeftStick(),oi.getRightStick());
+        driveTrain.tankDrive(oi.getLeftStick(), oi.getRightStick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
