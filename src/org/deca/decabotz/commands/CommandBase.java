@@ -6,6 +6,7 @@ import org.deca.decabotz.OI;
 import org.deca.decabotz.subsystems.DriveTrain;
 import org.deca.decabotz.subsystems.FrontLifter;
 import org.deca.decabotz.subsystems.RearLifter;
+import org.deca.decabotz.subsystems.Shooter;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -21,6 +22,7 @@ public abstract class CommandBase extends Command {
     public static DriveTrain driveTrain;
     public static FrontLifter frontLifter;
     public static RearLifter rearLifter;
+    public static Shooter shooter;
     // Create a single static instance of all of your subsystems
 
     public static void init() {
@@ -41,6 +43,12 @@ public abstract class CommandBase extends Command {
             frontLifter = new FrontLifter();
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
+        }
+        try {
+            shooter = new Shooter();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+            
         }
 
         rearLifter = new RearLifter();

@@ -12,11 +12,15 @@ public class RobotMap {
     public static final int rightJagDriveID = 2,
                             leftJagDriveID = 3,
                             frontLiftJagID = 4,
+                            shooterJagID = 5,
                             operatorGamepadID = 2,
                             solenoidOneExtendID = 1,
                             solenoidOneRetractID = 2,
                             solenoidTwoExtendID = 3,
                             solenoidTwoRetractID = 4,
                             rearLiftActivateID = 1,
-                            gamepadID = 1;
+                            gamepadID = 1,
+                            shooterForwardID = 1,
+                            shooterBackwardID = 2;
+    public static final double shooterSpeedID = 0.75;
 }
