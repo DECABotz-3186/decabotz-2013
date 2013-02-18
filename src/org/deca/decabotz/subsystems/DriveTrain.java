@@ -29,6 +29,7 @@ public class DriveTrain extends Subsystem {
             leftJag = new CANJaguar(RobotMap.leftJagDriveID);
             rightJag = new CANJaguar(RobotMap.rightJagDriveID);
             drive = new RobotDrive(leftJag, rightJag);
+
             drive.setSafetyEnabled(false);
         } catch (CANTimeoutException e) {
             throw e;

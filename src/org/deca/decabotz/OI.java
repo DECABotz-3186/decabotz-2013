@@ -23,11 +23,11 @@ public class OI {
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
 
     public double getLeftStick() {
-        return -gamePad.getRawAxis(RobotMap.leftJoyAxisID);
+        return gamePad.getRawAxis(RobotMap.leftJoyAxisID);
     }
 
     public double getRightStick() {
-        return -gamePad.getRawAxis(RobotMap.rightJoyAxisID);
+        return gamePad.getRawAxis(RobotMap.rightJoyAxisID);
 
     }
 
