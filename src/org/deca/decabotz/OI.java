@@ -3,6 +3,7 @@ package org.deca.decabotz;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.camera.AxisCamera;
 import org.deca.decabotz.commands.ExtendRearLift;
 import org.deca.decabotz.commands.RetractRearLift;
 import org.deca.decabotz.commands.ShooterBackward;
@@ -22,20 +23,20 @@ public class OI {
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
 
     public double getLeftStick() {
-        return -gamePad.getRawAxis(2);
+        return -gamePad.getRawAxis(RobotMap.leftJoyAxisID);
     }
 
     public double getRightStick() {
-        return gamePad.getRawAxis(5);
+        return -gamePad.getRawAxis(RobotMap.rightJoyAxisID);
 
     }
 
     public double getOperatorStick() {
-        return operatorGamepad.getRawAxis(2);
+        return operatorGamepad.getRawAxis(RobotMap.operatorLeftJoyAxisID);
     }
 
     public double getOperatorThrottle() {
-        return operatorGamepad.getRawAxis(5);
+        return operatorGamepad.getRawAxis(RobotMap.operatorRightJoyAxisID);
     }
     
 

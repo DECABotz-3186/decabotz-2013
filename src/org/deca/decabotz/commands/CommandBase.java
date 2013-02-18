@@ -31,7 +31,7 @@ public abstract class CommandBase extends Command {
         // which commands extend), subsystems are not guaranteed to be
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
-        oi = new OI();
+       
 
         // Pass if CAN errors happen.
         try {
@@ -52,8 +52,8 @@ public abstract class CommandBase extends Command {
         }
 
         rearLifter = new RearLifter();
-
-
+        
+        oi = new OI();
 
         // Show what command your subsystem is running on the SmartDashboard
     }
