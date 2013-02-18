@@ -7,7 +7,6 @@ package org.deca.decabotz.subsystems;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.deca.decabotz.RobotMap;
-import org.deca.decabotz.commands.RetractRearLift;
 
 /**
  *
@@ -36,14 +35,14 @@ public class RearLifter extends Subsystem {
 
     }
 
-    public void LiftExtend() {
+    public void liftExtend() {
         solenoidOneExtend.set(true);
         solenoidTwoExtend.set(true);
         solenoidOneRetract.set(false);
         solenoidTwoRetract.set(false);
     }
 
-    public void LiftRetract() {
+    public void liftRetract() {
         solenoidOneExtend.set(false);
         solenoidTwoExtend.set(false);
         solenoidOneRetract.set(true);

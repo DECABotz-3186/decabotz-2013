@@ -21,7 +21,8 @@ public class OI {
     Button rearLiftButton = new JoystickButton(operatorGamepad, RobotMap.rearLiftActivateID);
     Button shooterForwardButton = new JoystickButton(gamePad, RobotMap.shooterForwardID);
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
-
+    
+    // Possibly reverse.
     public double getLeftStick() {
         return gamePad.getRawAxis(RobotMap.leftJoyAxisID);
     }
