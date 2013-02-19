@@ -22,8 +22,8 @@ public class RobotMap {
                             gamepadID = 1,
                             leftJoyAxisID = 5,
                             rightJoyAxisID = 2,
-                            operatorLeftJoyAxisID = 5,
-                            operatorRightJoyAxisID = 2,
+                            operatorLeftJoyAxisID = 2,
+                            operatorRightJoyAxisID = 5,
                             shooterForwardID = 1,
                             shooterBackwardID = 2;
     public static final double shooterSpeedID = 0.75;
