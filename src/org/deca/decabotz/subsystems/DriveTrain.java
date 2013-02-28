@@ -6,6 +6,7 @@ package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.deca.decabotz.RobotMap;
@@ -44,5 +45,11 @@ public class DriveTrain extends Subsystem {
 
     public void tankDrive(double leftStick, double rightStick) {
         drive.tankDrive(leftStick, rightStick);
+    }
+    public void timedDrive(double speed, double turn, double time){
+        drive.drive(-speed, turn);
+        Timer.delay(time);
+        drive.drive(0, 0);
+        
     }
 }

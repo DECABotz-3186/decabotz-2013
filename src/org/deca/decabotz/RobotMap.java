@@ -26,5 +26,10 @@ public class RobotMap {
                             operatorRightJoyAxisID = 5,
                             shooterForwardID = 1,
                             shooterBackwardID = 2;
-    public static final double shooterSpeedID = 0.75;
+    public static final double shooterSpeedID = 0.75,
+                                autonomousDriveForwardSpeed= 1,
+                                autonomousDriveForwardTurn= 0,
+                                autonomousDriveForwardTime= 5,
+                                autonomousShooterTime= 5;
+                                   
 }

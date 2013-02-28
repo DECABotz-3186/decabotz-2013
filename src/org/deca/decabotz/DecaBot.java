@@ -7,7 +7,9 @@
 package org.deca.decabotz;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import org.deca.decabotz.commands.AutoGoalCorner;
 import org.deca.decabotz.commands.CommandBase;
 
 /**
@@ -20,6 +22,7 @@ import org.deca.decabotz.commands.CommandBase;
 public class DecaBot extends IterativeRobot {
 
     //Command autonomousCommand;
+    Command autoGoalCorner;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -30,11 +33,13 @@ public class DecaBot extends IterativeRobot {
 
         // Initialize all subsystems
         CommandBase.init();
+        autoGoalCorner = new AutoGoalCorner();
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
         //autonomousCommand.start();
+        autoGoalCorner.start();
     }
 
     /**
