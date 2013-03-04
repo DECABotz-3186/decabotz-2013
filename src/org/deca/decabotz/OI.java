@@ -3,8 +3,9 @@ package org.deca.decabotz;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.camera.AxisCamera;
+import org.deca.decabotz.commands.ExtendChassisHooks;
 import org.deca.decabotz.commands.ExtendRearLift;
+import org.deca.decabotz.commands.RetractChassisHooks;
 import org.deca.decabotz.commands.RetractRearLift;
 import org.deca.decabotz.commands.ShooterBackward;
 import org.deca.decabotz.commands.ShooterForward;
@@ -18,6 +19,7 @@ public class OI {
 
     Joystick operatorGamepad = new Joystick(RobotMap.operatorGamepadID);
     Joystick gamePad = new Joystick(RobotMap.gamepadID);
+    Button chassisHooksButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksActivateID);
     Button rearLiftButton = new JoystickButton(operatorGamepad, RobotMap.rearLiftActivateID);
     Button shooterForwardButton = new JoystickButton(gamePad, RobotMap.shooterForwardID);
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
@@ -42,6 +44,8 @@ public class OI {
     
 
     public OI() {
+        chassisHooksButton.whenPressed(new ExtendChassisHooks());
+        chassisHooksButton.whenPressed(new RetractChassisHooks());
         rearLiftButton.whenPressed(new ExtendRearLift());
         rearLiftButton.whenReleased(new RetractRearLift());
         shooterForwardButton.whenPressed(new ShooterForward());

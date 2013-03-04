@@ -3,6 +3,7 @@ package org.deca.decabotz.commands;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Command;
 import org.deca.decabotz.OI;
+import org.deca.decabotz.subsystems.ChassisHooks;
 import org.deca.decabotz.subsystems.DriveTrain;
 import org.deca.decabotz.subsystems.FrontLifter;
 import org.deca.decabotz.subsystems.RearLifter;
@@ -23,6 +24,7 @@ public abstract class CommandBase extends Command {
     public static FrontLifter frontLifter;
     public static RearLifter rearLifter;
     public static Shooter shooter;
+    public static ChassisHooks chassisHooks;
     // Create a single static instance of all of your subsystems
 
     public static void init() {

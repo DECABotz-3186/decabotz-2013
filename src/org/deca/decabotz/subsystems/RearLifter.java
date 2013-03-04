@@ -18,16 +18,10 @@ public class RearLifter extends Subsystem {
 
     Solenoid solenoidOneExtend;
     Solenoid solenoidOneRetract;
-    Solenoid solenoidTwoExtend;
-    Solenoid solenoidTwoRetract;
 
     public RearLifter() {
         solenoidOneExtend = new Solenoid(RobotMap.solenoidOneExtendID);
         solenoidOneRetract = new Solenoid(RobotMap.solenoidOneRetractID);
-        solenoidTwoExtend = new Solenoid(RobotMap.solenoidTwoExtendID);
-        solenoidTwoRetract = new Solenoid(RobotMap.solenoidTwoRetractID);
-
-
     }
 
     public void initDefaultCommand() {
@@ -37,15 +31,11 @@ public class RearLifter extends Subsystem {
 
     public void liftExtend() {
         solenoidOneExtend.set(true);
-        solenoidTwoExtend.set(true);
         solenoidOneRetract.set(false);
-        solenoidTwoRetract.set(false);
     }
 
     public void liftRetract() {
         solenoidOneExtend.set(false);
-        solenoidTwoExtend.set(false);
         solenoidOneRetract.set(true);
-        solenoidTwoRetract.set(true);
     }
 }
