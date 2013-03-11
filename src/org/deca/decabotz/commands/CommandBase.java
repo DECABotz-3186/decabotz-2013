@@ -8,6 +8,7 @@ import org.deca.decabotz.subsystems.DriveTrain;
 import org.deca.decabotz.subsystems.FrontLifter;
 import org.deca.decabotz.subsystems.RearLifter;
 import org.deca.decabotz.subsystems.Shooter;
+import org.deca.decabotz.subsystems.WedgePush;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -25,6 +26,7 @@ public abstract class CommandBase extends Command {
     public static RearLifter rearLifter;
     public static Shooter shooter;
     public static ChassisHooks chassisHooks;
+    public static WedgePush wedgePush;
     // Create a single static instance of all of your subsystems
 
     public static void init() {
