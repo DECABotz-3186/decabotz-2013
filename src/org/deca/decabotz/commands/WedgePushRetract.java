@@ -4,18 +4,16 @@
  */
 package org.deca.decabotz.commands;
 
-import org.deca.decabotz.RobotMap;
-
 /**
  *
  * @author Sciencelab
  */
-public class AutonomousDriveForward extends CommandBase {
+public class WedgePushRetract extends CommandBase {
     
-    public AutonomousDriveForward() {
-        requires(driveTrain);
+    public WedgePushRetract() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+        requires(wedgePush);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +22,7 @@ public class AutonomousDriveForward extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveTrain.timedDrive(RobotMap.autonomousDriveForwardSpeed, RobotMap.autonomousDriveForwardTurn, RobotMap.autonomousDriveForwardTime);
+        wedgePush.wedgeRetract();
     }
 
     // Make this return true when this Command no longer needs to run execute()
