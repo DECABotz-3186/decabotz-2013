@@ -20,7 +20,7 @@ public class RobotMap {
                             solenoidTwoRetractID = 4,
                             solenoidThreeExtendID = 5,
                             solenoidThreeRetractID = 6,
-                            rearLiftActivateID = 1,
+                            rearLiftActivateID = 4,
                             chassisHooksActivateID = 3,
                             gamepadID = 1,
                             leftJoyAxisID = 5,
