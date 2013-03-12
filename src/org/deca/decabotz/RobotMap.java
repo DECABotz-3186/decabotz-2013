@@ -21,14 +21,15 @@ public class RobotMap {
                             solenoidThreeExtendID = 5,
                             solenoidThreeRetractID = 6,
                             rearLiftActivateID = 1,
-                            chassisHooksActivateID = 2,
+                            chassisHooksActivateID = 3,
                             gamepadID = 1,
                             leftJoyAxisID = 5,
                             rightJoyAxisID = 2,
                             operatorLeftJoyAxisID = 2,
                             operatorRightJoyAxisID = 5,
                             shooterForwardID = 1,
-                            shooterBackwardID = 2;
+                            shooterBackwardID = 2,
+                            wedgePushActivateID = 2;
     public static final double shooterSpeedID = 0.75,
                                 autonomousDriveForwardSpeed= 1,
                                 autonomousDriveForwardTurn= 0,
