@@ -22,7 +22,7 @@ public class OI {
     Joystick operatorGamepad = new Joystick(RobotMap.operatorGamepadID);
     Joystick gamePad = new Joystick(RobotMap.gamepadID);
     Button chassisHooksButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksActivateID);
-    Button rearLiftButton = new JoystickButton(operatorGamepad, RobotMap.rearLiftActivateID);
+    Button rearLiftButton = new JoystickButton(gamePad, RobotMap.rearLiftActivateID);
     Button shooterForwardButton = new JoystickButton(gamePad, RobotMap.shooterForwardID);
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
     Button wedgePushButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushActivateID);
