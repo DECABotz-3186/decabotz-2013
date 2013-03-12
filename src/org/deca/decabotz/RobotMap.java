@@ -29,7 +29,9 @@ public class RobotMap {
                             operatorRightJoyAxisID = 5,
                             shooterForwardID = 1,
                             shooterBackwardID = 2,
-                            wedgePushActivateID = 2;
+                            wedgePushActivateID = 2,
+                            compressorRelayID = 2,
+                            compressorSwitchID = 3;
     public static final double shooterSpeedID = 0.75,
                                 autonomousDriveForwardSpeed= 1,
                                 autonomousDriveForwardTurn= 0,
