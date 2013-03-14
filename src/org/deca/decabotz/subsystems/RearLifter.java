@@ -6,6 +6,7 @@ package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 
 /**
@@ -22,6 +23,9 @@ public class RearLifter extends Subsystem {
     public RearLifter() {
         solenoidOneExtend = new Solenoid(RobotMap.solenoidOneExtendID);
         solenoidOneRetract = new Solenoid(RobotMap.solenoidOneRetractID);
+        
+        LiveWindow.addActuator("RearLifter", "solenoidExtend", solenoidOneExtend);
+        LiveWindow.addActuator("RearLifter", "solenoidRetract", solenoidOneRetract);
     }
 
     public void initDefaultCommand() {

@@ -6,6 +6,7 @@ package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 
 /**
@@ -22,7 +23,8 @@ public class WedgePush extends Subsystem {
     public WedgePush() {
         solenoidThreeExtend = new Solenoid(RobotMap.solenoidThreeExtendID);
         solenoidThreeRetract = new Solenoid(RobotMap.solenoidThreeRetractID);
-        
+        LiveWindow.addActuator("WedgePush", "solenoidExtend", solenoidThreeExtend);
+        LiveWindow.addActuator("WedgePush", "solenoidRetract", solenoidThreeRetract);
     }
 
     public void initDefaultCommand() {

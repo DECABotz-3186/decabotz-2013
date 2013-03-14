@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 import org.deca.decabotz.commands.DualStickDrive;
 
@@ -32,6 +33,8 @@ public class DriveTrain extends Subsystem {
             drive = new RobotDrive(leftJag, rightJag);
 
             drive.setSafetyEnabled(false);
+            LiveWindow.addActuator("DriveTrain", "Left Jag", leftJag);
+            LiveWindow.addActuator("DriveTrain", "Right Jag", rightJag);
         } catch (CANTimeoutException e) {
             throw e;
         }
