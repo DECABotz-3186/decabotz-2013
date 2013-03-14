@@ -7,6 +7,7 @@ package org.deca.decabotz.subsystems;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 import org.deca.decabotz.commands.FrontLift;
 
@@ -21,6 +22,7 @@ public class FrontLifter extends Subsystem {
     public FrontLifter() throws CANTimeoutException {
         try {
             liftJag = new CANJaguar(RobotMap.frontLiftJagID);
+            LiveWindow.addActuator("Front Lift", "liftJag", liftJag);
         } catch (CANTimeoutException ex) {
             throw ex;
         }

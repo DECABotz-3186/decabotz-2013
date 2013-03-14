@@ -7,6 +7,7 @@ package org.deca.decabotz.subsystems;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 import org.deca.decabotz.commands.ShooterStop;
 
@@ -22,6 +23,7 @@ private CANJaguar shooterJag;
 public Shooter() throws CANTimeoutException{
     try{
        shooterJag = new CANJaguar(RobotMap.shooterJagID); 
+       LiveWindow.addActuator("Shooter", "jag", shooterJag);
     } catch(CANTimeoutException e){
         throw e;
     }

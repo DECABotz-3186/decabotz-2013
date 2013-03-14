@@ -6,6 +6,7 @@ package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 
 /**
@@ -22,6 +23,7 @@ public class AirCompressor extends Subsystem {
         compressor = new Compressor(RobotMap.compressorRelayID,RobotMap.compressorSwitchID);
         
         compressor.start();
+        LiveWindow.addActuator("AirCompressor", "compressor", compressor);
     }
 
     public void initDefaultCommand() {
