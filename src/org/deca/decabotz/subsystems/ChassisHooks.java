@@ -6,6 +6,7 @@ package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.deca.decabotz.RobotMap;
 
 /**
@@ -23,6 +24,9 @@ public class ChassisHooks extends Subsystem {
         
         solenoidTwoExtend = new Solenoid(RobotMap.solenoidTwoExtendID);
         solenoidTwoRetract = new Solenoid(RobotMap.solenoidTwoRetractID);
+        
+        LiveWindow.addActuator("ChassisHooks", "extend", solenoidTwoExtend);
+        LiveWindow.addActuator("ChassisHooks", "retract", solenoidTwoRetract);
     }
 
     public void initDefaultCommand() {
