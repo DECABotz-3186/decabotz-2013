@@ -36,6 +36,9 @@ public class RobotMap {
                                 autonomousDriveForwardSpeed= 1,
                                 autonomousDriveForwardTurn= 0,
                                 autonomousDriveForwardTime= 5,
-                                autonomousShooterTime= 5;
+                                autonomousShooterTime= 5,
+                                autonomousDriveLeftSpeed= 1,
+                                autonomousDriveLeftTurn = 1,
+                                autonomousDriveLeftTime = 2;
                                    
 }

@@ -3,6 +3,7 @@ package org.deca.decabotz.commands;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.OI;
 import org.deca.decabotz.subsystems.AirCompressor;
 import org.deca.decabotz.subsystems.ChassisHooks;
@@ -65,6 +66,10 @@ public abstract class CommandBase extends Command {
         compressor = new AirCompressor();
 
         // Show what command your subsystem is running on the SmartDashboard
+        SmartDashboard.putData(driveTrain);
+        SmartDashboard.putData(frontLifter);
+        SmartDashboard.putData(shooter);
+        SmartDashboard.putData(compressor);
     }
 
     public CommandBase(String name) {

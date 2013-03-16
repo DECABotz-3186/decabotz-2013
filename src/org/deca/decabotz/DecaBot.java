@@ -9,7 +9,10 @@ package org.deca.decabotz;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.commands.AutoGoalCorner;
+import org.deca.decabotz.commands.AutoLeftGoalCorner;
 import org.deca.decabotz.commands.CommandBase;
 
 /**
@@ -20,9 +23,14 @@ import org.deca.decabotz.commands.CommandBase;
  * directory.
  */
 public class DecaBot extends IterativeRobot {
+    
+    Command autonomousCommand;
+    SendableChooser autoChooser;
 
     //Command autonomousCommand;
     Command autoGoalCorner;
+    Command autoGoalLeftCorner;
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -34,11 +42,18 @@ public class DecaBot extends IterativeRobot {
         // Initialize all subsystems
         CommandBase.init();
         autoGoalCorner = new AutoGoalCorner();
+        
+    // Option to select the autonomous code from the SmartDashboard
+        autoChooser = new SendableChooser();
+        autoChooser.addDefault("Goal Corner", new AutoGoalCorner());
+        autoChooser.addObject("Left Side of Goal", new AutoLeftGoalCorner());
+        SmartDashboard.putData("Autonomous mode chooser", autoChooser);
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
         //autonomousCommand.start();
+        autonomousCommand = (Command) autoChooser.getSelected();
         autoGoalCorner.start();
     }
 
@@ -55,6 +70,7 @@ public class DecaBot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         //autonomousCommand.cancel();
+        updateStatus();
     }
 
     /**
@@ -62,5 +78,16 @@ public class DecaBot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        updateStatus();
+    }
+    
+    public void disabledPeriod(){
+        updateStatus();
+    }
+    
+    public void updateStatus(){
+        CommandBase.driveTrain.updateStatus();
+        CommandBase.frontLifter.updateStatus();
+        CommandBase.compressor.updateStatus();
     }
 }

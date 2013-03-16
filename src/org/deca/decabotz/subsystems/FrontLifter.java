@@ -7,6 +7,7 @@ package org.deca.decabotz.subsystems;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.RobotMap;
 import org.deca.decabotz.commands.FrontLift;
 
@@ -42,6 +43,15 @@ public class FrontLifter extends Subsystem {
                 liftJag.setX(speedValue);
             }
         } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void updateStatus() {
+        try {
+            SmartDashboard.putDouble("LiftJag", liftJag.getOutputVoltage());
+        } catch (CANTimeoutException ex) {
+            SmartDashboard.putString("CanError","Can Problem reading liftJag" );
             ex.printStackTrace();
         }
     }

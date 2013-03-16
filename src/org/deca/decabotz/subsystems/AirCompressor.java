@@ -6,6 +6,7 @@ package org.deca.decabotz.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.RobotMap;
 
 /**
@@ -28,5 +29,9 @@ public class AirCompressor extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
         
+    }
+
+    public void updateStatus() {
+        SmartDashboard.putBoolean("AirCompressor",compressor.getPressureSwitchValue());
     }
 }
