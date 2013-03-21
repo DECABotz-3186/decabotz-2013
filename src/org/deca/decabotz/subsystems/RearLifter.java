@@ -20,8 +20,8 @@ public class RearLifter extends Subsystem {
     Solenoid solenoidOneRetract;
 
     public RearLifter() {
-        solenoidOneExtend = new Solenoid(RobotMap.solenoidOneExtendID);
-        solenoidOneRetract = new Solenoid(RobotMap.solenoidOneRetractID);
+        solenoidOneExtend = new Solenoid(RobotMap.solenoidRearLiftExtendID);
+        solenoidOneRetract = new Solenoid(RobotMap.solenoidRearLiftRetractID);
     }
 
     public void initDefaultCommand() {

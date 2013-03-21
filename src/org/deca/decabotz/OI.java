@@ -25,7 +25,8 @@ public class OI {
     Button rearLiftButton = new JoystickButton(gamePad, RobotMap.rearLiftActivateID);
     Button shooterForwardButton = new JoystickButton(gamePad, RobotMap.shooterForwardID);
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
-    Button wedgePushButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushActivateID);
+    Button wedgePushExtendButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushExtendID);
+    Button wedgePushRetractButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushRetractID);
     
     // Possibly reverse.
     public double getLeftStick() {
@@ -48,15 +49,16 @@ public class OI {
 
     public OI() {
         chassisHooksButton.whenPressed(new ExtendChassisHooks());
-        chassisHooksButton.whenPressed(new RetractChassisHooks());
+        chassisHooksButton.whenReleased(new RetractChassisHooks());
         rearLiftButton.whenPressed(new ExtendRearLift());
         rearLiftButton.whenReleased(new RetractRearLift());
         shooterForwardButton.whenPressed(new ShooterForward());
         shooterForwardButton.whenReleased(new ShooterStop());
         shooterBackwardButton.whenPressed(new ShooterBackward());
         shooterBackwardButton.whenReleased(new ShooterStop());
-        wedgePushButton.whenPressed(new WedgePushExtend());
-        wedgePushButton.whenReleased(new WedgePushRetract());
+        wedgePushExtendButton.whenPressed(new WedgePushExtend());
+        wedgePushRetractButton.whenPressed(new WedgePushRetract());
+
       
     }
    

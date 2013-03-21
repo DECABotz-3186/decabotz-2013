@@ -21,8 +21,9 @@ public class ChassisHooks extends Subsystem {
     
     public ChassisHooks() {
         
-        solenoidTwoExtend = new Solenoid(RobotMap.solenoidTwoExtendID);
-        solenoidTwoRetract = new Solenoid(RobotMap.solenoidTwoRetractID);
+        solenoidTwoExtend = new Solenoid(RobotMap.solenoidChassisHooksExtendID);
+        //TODO: FIX ME
+        solenoidTwoRetract = new Solenoid(RobotMap.solenoidChassisHooksRetractID);
     }
 
     public void initDefaultCommand() {

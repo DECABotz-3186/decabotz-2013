@@ -20,8 +20,8 @@ public class WedgePush extends Subsystem {
     Solenoid solenoidThreeRetract;
     
     public WedgePush() {
-        solenoidThreeExtend = new Solenoid(RobotMap.solenoidThreeExtendID);
-        solenoidThreeRetract = new Solenoid(RobotMap.solenoidThreeRetractID);
+        solenoidThreeExtend = new Solenoid(RobotMap.solenoidWedgeExtendID);
+        solenoidThreeRetract = new Solenoid(RobotMap.solenoidWedgeRetractID);
         
     }
 
@@ -29,7 +29,10 @@ public class WedgePush extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    
     public void wedgeExtend () {
+        
         solenoidThreeExtend.set(true);
         solenoidThreeRetract.set(false);
     }
