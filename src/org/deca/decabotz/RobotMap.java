@@ -22,6 +22,7 @@ public class RobotMap {
                             solenoidWedgeExtendID = 6,
                             rearLiftActivateID = 4,
                             chassisHooksActivateID = 3,
+                            chassisHooksDeactivateID = 1,
                             gamepadID = 1,
                             leftJoyAxisID = 5,
                             rightJoyAxisID = 2,

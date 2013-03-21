@@ -21,7 +21,8 @@ public class OI {
 
     Joystick operatorGamepad = new Joystick(RobotMap.operatorGamepadID);
     Joystick gamePad = new Joystick(RobotMap.gamepadID);
-    Button chassisHooksButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksActivateID);
+    Button chassisHooksActivateButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksActivateID);
+    Button chassisHooksDeactivateButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksDeactivateID);
     Button rearLiftButton = new JoystickButton(gamePad, RobotMap.rearLiftActivateID);
     Button shooterForwardButton = new JoystickButton(gamePad, RobotMap.shooterForwardID);
     Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
@@ -48,8 +49,8 @@ public class OI {
     
 
     public OI() {
-        chassisHooksButton.whenPressed(new ExtendChassisHooks());
-        chassisHooksButton.whenReleased(new RetractChassisHooks());
+        chassisHooksActivateButton.whenPressed(new ExtendChassisHooks());
+        chassisHooksDeactivateButton.whenPressed(new RetractChassisHooks());
         rearLiftButton.whenPressed(new ExtendRearLift());
         rearLiftButton.whenReleased(new RetractRearLift());
         shooterForwardButton.whenPressed(new ShooterForward());
