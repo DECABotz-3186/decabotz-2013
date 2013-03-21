@@ -61,9 +61,15 @@ public abstract class CommandBase extends Command {
 
         rearLifter = new RearLifter();
         
-        oi = new OI();
+        
         
         compressor = new AirCompressor();
+        
+        chassisHooks = new ChassisHooks();
+        
+        wedgePush = new WedgePush();
+        oi = new OI();
+         
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(driveTrain);
