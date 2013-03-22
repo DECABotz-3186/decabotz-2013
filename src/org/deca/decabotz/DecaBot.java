@@ -41,20 +41,20 @@ public class DecaBot extends IterativeRobot {
 
         // Initialize all subsystems
         CommandBase.init();
-        autoGoalCorner = new AutoGoalCorner();
+       // autoGoalCorner = new AutoGoalCorner();
         
     // Option to select the autonomous code from the SmartDashboard
-        autoChooser = new SendableChooser();
-        autoChooser.addDefault("Goal Corner", new AutoGoalCorner());
-        autoChooser.addObject("Left Side of Goal", new AutoLeftGoalCorner());
-        SmartDashboard.putData("Autonomous mode chooser", autoChooser);
+      // autoChooser = new SendableChooser();
+        //autoChooser.addDefault("Goal Corner", new AutoGoalCorner());
+       // autoChooser.addObject("Left Side of Goal", new AutoLeftGoalCorner());
+        //SmartDashboard.putData("Autonomous mode chooser", autoChooser);
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
         //autonomousCommand.start();
-        autonomousCommand = (Command) autoChooser.getSelected();
-        autoGoalCorner.start();
+        //autonomousCommand = (Command) autoChooser.getSelected();
+        //autoGoalCorner.start();
     }
 
     /**
