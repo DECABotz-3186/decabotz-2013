@@ -35,12 +35,12 @@ public class RobotMap {
                             compressorRelayID = 1,
                             compressorSwitchID = 1;
     public static final double shooterSpeedID = 0.75,
-                                autonomousDriveForwardSpeed= 1,
-                                autonomousDriveForwardTurn= 0,
-                                autonomousDriveForwardTime= 5,
+                                autonomousDriveBackwardSpeed = -1,
+                                autonomousDriveBackwardTurn = 0,
+                                autonomousDriveBackwardTime = 3,
                                 autonomousShooterTime= 5,
                                 autonomousDriveLeftSpeed= 1,
                                 autonomousDriveLeftTurn = 1,
-                                autonomousDriveLeftTime = 2;
+                                autonomousDriveLeftTime = 1;
                                    
 }

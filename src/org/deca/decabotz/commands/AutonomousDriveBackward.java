@@ -10,9 +10,9 @@ import org.deca.decabotz.RobotMap;
  *
  * @author Sciencelab
  */
-public class AutonomousDriveForward extends CommandBase {
+public class AutonomousDriveBackward extends CommandBase {
     
-    public AutonomousDriveForward() {
+    public AutonomousDriveBackward() {
         requires(driveTrain);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -24,7 +24,7 @@ public class AutonomousDriveForward extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveTrain.timedDrive(RobotMap.autonomousDriveForwardSpeed, RobotMap.autonomousDriveForwardTurn, RobotMap.autonomousDriveForwardTime);
+        driveTrain.timedDrive(RobotMap.autonomousDriveBackwardSpeed, RobotMap.autonomousDriveBackwardTurn, RobotMap.autonomousDriveBackwardTime);
     }
 
     // Make this return true when this Command no longer needs to run execute()

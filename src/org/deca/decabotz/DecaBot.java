@@ -41,20 +41,20 @@ public class DecaBot extends IterativeRobot {
 
         // Initialize all subsystems
         CommandBase.init();
-       // autoGoalCorner = new AutoGoalCorner();
+        autoGoalCorner = new AutoGoalCorner();
         
     // Option to select the autonomous code from the SmartDashboard
-      // autoChooser = new SendableChooser();
-        //autoChooser.addDefault("Goal Corner", new AutoGoalCorner());
-       // autoChooser.addObject("Left Side of Goal", new AutoLeftGoalCorner());
-        //SmartDashboard.putData("Autonomous mode chooser", autoChooser);
+       autoChooser = new SendableChooser();
+       autoChooser.addDefault("Goal Corner", new AutoGoalCorner());
+       autoChooser.addObject("Left Side of Goal", new AutoLeftGoalCorner());
+       SmartDashboard.putData("Autonomous mode chooser", autoChooser);
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        //autonomousCommand.start();
-        //autonomousCommand = (Command) autoChooser.getSelected();
-        //autoGoalCorner.start();
+        autonomousCommand.start();
+        autonomousCommand = (Command) autoChooser.getSelected();
+        autoGoalCorner.start();
     }
 
     /**
@@ -69,7 +69,7 @@ public class DecaBot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        //autonomousCommand.cancel();
+        autonomousCommand.cancel();
         updateStatus();
     }
 
