@@ -7,11 +7,9 @@ import org.deca.decabotz.commands.ExtendChassisHooks;
 import org.deca.decabotz.commands.ExtendRearLift;
 import org.deca.decabotz.commands.RetractChassisHooks;
 import org.deca.decabotz.commands.RetractRearLift;
-import org.deca.decabotz.commands.ShooterBackward;
-import org.deca.decabotz.commands.ShooterForward;
+import org.deca.decabotz.commands.ShooterHigh;
+import org.deca.decabotz.commands.ShooterLow;
 import org.deca.decabotz.commands.ShooterStop;
-import org.deca.decabotz.commands.WedgePushExtend;
-import org.deca.decabotz.commands.WedgePushRetract;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -24,8 +22,8 @@ public class OI {
     Button chassisHooksActivateButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksActivateID);
     Button chassisHooksDeactivateButton = new JoystickButton(operatorGamepad, RobotMap.chassisHooksDeactivateID);
     Button rearLiftButton = new JoystickButton(gamePad, RobotMap.rearLiftActivateID);
-    Button shooterForwardButton = new JoystickButton(gamePad, RobotMap.shooterForwardID);
-    Button shooterBackwardButton = new JoystickButton(gamePad, RobotMap.shooterBackwardID);
+    Button shooterHighButton = new JoystickButton(gamePad, RobotMap.shooterHighID);
+    Button shooterLowButton = new JoystickButton(gamePad, RobotMap.shooterLowID);
     Button wedgePushExtendButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushExtendID);
     Button wedgePushRetractButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushRetractID);
     
@@ -53,12 +51,10 @@ public class OI {
         chassisHooksDeactivateButton.whenPressed(new RetractChassisHooks());
         rearLiftButton.whenPressed(new ExtendRearLift());
         rearLiftButton.whenReleased(new RetractRearLift());
-        shooterForwardButton.whenPressed(new ShooterForward());
-        shooterForwardButton.whenReleased(new ShooterStop());
-        shooterBackwardButton.whenPressed(new ShooterBackward());
-        shooterBackwardButton.whenReleased(new ShooterStop());
-        wedgePushExtendButton.whenPressed(new WedgePushExtend());
-        wedgePushRetractButton.whenPressed(new WedgePushRetract());
+        shooterHighButton.whenPressed(new ShooterHigh());
+        shooterHighButton.whenReleased(new ShooterStop());
+        shooterLowButton.whenPressed(new ShooterLow());
+        shooterLowButton.whenReleased(new ShooterStop());
 
       
     }

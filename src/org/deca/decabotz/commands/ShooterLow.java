@@ -8,12 +8,13 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class WedgePushRetract extends CommandBase {
+public class ShooterLow extends CommandBase {
     
-    public WedgePushRetract() {
+    public ShooterLow() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(wedgePush);
+        
+        requires(shooter);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +23,7 @@ public class WedgePushRetract extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        wedgePush.wedgeRetract();
+        shooter.forwardLow();
     }
 
     // Make this return true when this Command no longer needs to run execute()

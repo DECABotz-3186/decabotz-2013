@@ -8,12 +8,12 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class FrontLift extends CommandBase {
-
-    public FrontLift() {
+public class ShooterHigh extends CommandBase {
+    
+    public ShooterHigh() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(frontLifter);
+        requires(shooter);
     }
 
     // Called just before this Command runs the first time
@@ -22,8 +22,9 @@ public class FrontLift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        frontLifter.setLift(oi.getOperatorStick());
+        shooter.forwardHigh();
     }
+    
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

@@ -34,7 +34,6 @@ public class AutoLeftGoalCorner extends CommandGroup {
         addSequential(new AutonomousDriveLeft());
         Timer.delay(2);
         addSequential(new AutonomousDriveBackward());
-        addSequential(new ShooterBackward());
         Timer.delay(RobotMap.autonomousShooterTime);
         addSequential(new ShooterStop());
     }

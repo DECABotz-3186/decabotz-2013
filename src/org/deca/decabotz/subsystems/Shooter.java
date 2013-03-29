@@ -32,16 +32,16 @@ public Shooter() throws CANTimeoutException{
         //setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new ShooterStop());
     }
-    public void forward(){
+    public void forwardHigh(){
         try {
-            shooterJag.setX(RobotMap.shooterSpeedID);
+            shooterJag.setX(RobotMap.shooterSpeedHighID);
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }
     }
-    public void backward(){
-        try{
-            shooterJag.setX(-RobotMap.shooterSpeedID);
+    public void forwardLow(){
+        try {
+            shooterJag.setX(RobotMap.shooterSpeedLowID);
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
         }

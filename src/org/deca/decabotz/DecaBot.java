@@ -87,7 +87,6 @@ public class DecaBot extends IterativeRobot {
     
     public void updateStatus(){
         CommandBase.driveTrain.updateStatus();
-        CommandBase.frontLifter.updateStatus();
         CommandBase.compressor.updateStatus();
     }
 }

@@ -22,14 +22,18 @@ public class DriveTrain extends Subsystem {
     // here. Call these from Commands.
 
     private RobotDrive drive;
-        CANJaguar leftJag;
-        CANJaguar rightJag;
+        CANJaguar leftJag1;
+        CANJaguar leftJag2;
+        CANJaguar rightJag1;
+        CANJaguar rightJag2;
 
     public DriveTrain() throws CANTimeoutException {
         try {
-            leftJag = new CANJaguar(RobotMap.leftJagDriveID);
-            rightJag = new CANJaguar(RobotMap.rightJagDriveID);
-            drive = new RobotDrive(leftJag, rightJag);
+            leftJag1 = new CANJaguar(RobotMap.leftJagDrive1ID);
+            leftJag2 = new CANJaguar(RobotMap.leftJagDrive2ID);
+            rightJag1 = new CANJaguar(RobotMap.rightJagDrive1ID);
+            rightJag2 = new CANJaguar(RobotMap.rightJagDrive2ID);
+            drive = new RobotDrive(leftJag1, leftJag2, rightJag1, rightJag2);
 
             drive.setSafetyEnabled(false);
         } catch (CANTimeoutException e) {
@@ -55,17 +59,27 @@ public class DriveTrain extends Subsystem {
 
     public void updateStatus() {
         try {
-            SmartDashboard.putDouble("LeftDriveJag", leftJag.getOutputVoltage());
+            SmartDashboard.putDouble("LeftDriveJag1", leftJag1.getOutputVoltage());
         } catch (CANTimeoutException ex) {
-            SmartDashboard.putString("CanError", "Can Problem reading leftJag");
+            SmartDashboard.putString("CANError", "CAN Problem reading leftJag1");
             ex.printStackTrace();
         }
         try {
-            SmartDashboard.putDouble("RightDriveJag", rightJag.getOutputVoltage());
+            SmartDashboard.putDouble("LeftDriveJag2", leftJag2.getOutputVoltage());
         } catch (CANTimeoutException ex) {
-            SmartDashboard.putString("CanError", "Can Problem reading rightJag");
+            SmartDashboard.putString("CANError", "CAN Problem reading leftJag2");
             ex.printStackTrace();
         }
-        
+        try {
+            SmartDashboard.putDouble("RightDriveJag1", rightJag1.getOutputVoltage());
+        } catch (CANTimeoutException ex) {
+            SmartDashboard.putString("CANError", "CAN Problem reading rightJag1");
+            ex.printStackTrace();
+        }
+        try {
+            SmartDashboard.putDouble("RightDrivJag2", rightJag2.getOutputVoltage());
+        } catch (CANTimeoutException ex) {
+            SmartDashboard.putString("CANError", "CAN Problem reading rightJag2");
+        }
     }
 }

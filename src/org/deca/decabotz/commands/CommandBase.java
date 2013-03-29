@@ -8,10 +8,8 @@ import org.deca.decabotz.OI;
 import org.deca.decabotz.subsystems.AirCompressor;
 import org.deca.decabotz.subsystems.ChassisHooks;
 import org.deca.decabotz.subsystems.DriveTrain;
-import org.deca.decabotz.subsystems.FrontLifter;
 import org.deca.decabotz.subsystems.RearLifter;
 import org.deca.decabotz.subsystems.Shooter;
-import org.deca.decabotz.subsystems.WedgePush;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -25,11 +23,9 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static DriveTrain driveTrain;
-    public static FrontLifter frontLifter;
     public static RearLifter rearLifter;
     public static Shooter shooter;
     public static ChassisHooks chassisHooks;
-    public static WedgePush wedgePush;
     public static AirCompressor compressor;
     // Create a single static instance of all of your subsystems
 
@@ -48,11 +44,6 @@ public abstract class CommandBase extends Command {
             ex.printStackTrace();
         }
         try {
-            frontLifter = new FrontLifter();
-        } catch (CANTimeoutException ex) {
-            ex.printStackTrace();
-        }
-        try {
             shooter = new Shooter();
         } catch (CANTimeoutException ex) {
             ex.printStackTrace();
@@ -67,13 +58,11 @@ public abstract class CommandBase extends Command {
         
         chassisHooks = new ChassisHooks();
         
-        wedgePush = new WedgePush();
         oi = new OI();
          
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(driveTrain);
-        SmartDashboard.putData(frontLifter);
         SmartDashboard.putData(shooter);
         SmartDashboard.putData(compressor);
     }

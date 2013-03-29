@@ -32,7 +32,6 @@ public class AutoGoalCorner extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
         addSequential(new AutonomousDriveBackward());
-        addSequential(new ShooterBackward());
         Timer.delay(RobotMap.autonomousShooterTime);
         addSequential(new ShooterStop());
     }
