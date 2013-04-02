@@ -8,12 +8,12 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class RetractChassisHooks extends CommandBase {
-    
-    public RetractChassisHooks() {
+public class RetractHangHooks extends CommandBase {
+
+    public RetractHangHooks() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(chassisHooks);
+        requires(hangHooks);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class RetractChassisHooks extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        chassisHooks.hookRetract();
+        hangHooks.hookRetract();
     }
 
     // Make this return true when this Command no longer needs to run execute()

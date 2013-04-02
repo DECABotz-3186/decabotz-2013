@@ -8,21 +8,26 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class ExtendRearLift extends CommandBase {
-
-    public ExtendRearLift() {
+public class ToggleFrisbeePush extends CommandBase {
+    
+    public ToggleFrisbeePush() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(rearLifter);
+        requires(frisbeePush);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        
+        if(frisbeePush.isRunning()) {
+           frisbeePush.stopFrisbeePush();
+        } else{
+            frisbeePush.startFrisbeePush();
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        rearLifter.liftExtend();
     }
 
     // Make this return true when this Command no longer needs to run execute()

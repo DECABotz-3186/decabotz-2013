@@ -12,18 +12,18 @@ import org.deca.decabotz.RobotMap;
  *
  * @author Sciencelab
  */
-public class ChassisHooks extends Subsystem {
+public class SpeedBoost extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     
-    Solenoid solenoidTwoExtend;
-    Solenoid solenoidTwoRetract;
+    Solenoid solenoidTwoStartBoost;
+    Solenoid solenoidTwoEndBoost;
     
-    public ChassisHooks() {
+    public SpeedBoost() {
         
-        solenoidTwoExtend = new Solenoid(RobotMap.solenoidChassisHooksExtendID);
+        solenoidTwoStartBoost = new Solenoid(RobotMap.solenoidSpeedBoostStartID);
         //TODO: FIX ME
-        solenoidTwoRetract = new Solenoid(RobotMap.solenoidChassisHooksRetractID);
+        solenoidTwoEndBoost = new Solenoid(RobotMap.solenoidSpeedBoostStopID);
     }
 
     public void initDefaultCommand() {
@@ -32,16 +32,16 @@ public class ChassisHooks extends Subsystem {
            
     }
     
-    public void hookExtend() {
+    public void startBoost() {
             
-        solenoidTwoExtend.set(true);
-        solenoidTwoRetract.set(false);
+        solenoidTwoStartBoost.set(true);
+        solenoidTwoEndBoost.set(false);
         
     }
     
-    public void hookRetract() {
-        solenoidTwoExtend.set(false);
-        solenoidTwoRetract.set(true);
+    public void stopBoost() {
+        solenoidTwoStartBoost.set(false);
+        solenoidTwoEndBoost.set(true);
             
     }
 }

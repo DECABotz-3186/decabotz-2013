@@ -1,15 +1,16 @@
 package org.deca.decabotz.commands;
 
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.deca.decabotz.OI;
 import org.deca.decabotz.subsystems.AirCompressor;
-import org.deca.decabotz.subsystems.ChassisHooks;
 import org.deca.decabotz.subsystems.DriveTrain;
-import org.deca.decabotz.subsystems.RearLifter;
+import org.deca.decabotz.subsystems.FrisbeePush;
+import org.deca.decabotz.subsystems.HangHooks;
 import org.deca.decabotz.subsystems.Shooter;
+import org.deca.decabotz.subsystems.ShooterLift;
+import org.deca.decabotz.subsystems.SpeedBoost;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -23,10 +24,12 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static DriveTrain driveTrain;
-    public static RearLifter rearLifter;
+    public static HangHooks hangHooks;
     public static Shooter shooter;
-    public static ChassisHooks chassisHooks;
+    public static SpeedBoost speedBoost;
     public static AirCompressor compressor;
+    public static ShooterLift shooterLift;
+    public static FrisbeePush frisbeePush;
     // Create a single static instance of all of your subsystems
 
     public static void init() {
@@ -46,17 +49,20 @@ public abstract class CommandBase extends Command {
         try {
             shooter = new Shooter();
         } catch (CANTimeoutException ex) {
-            ex.printStackTrace();
-            
+            ex.printStackTrace();    
         }
-
-        rearLifter = new RearLifter();
+        try {
+            shooterLift = new ShooterLift();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
+        hangHooks = new HangHooks();
         
         
         
         compressor = new AirCompressor();
         
-        chassisHooks = new ChassisHooks();
+        speedBoost = new SpeedBoost();
         
         oi = new OI();
          
@@ -65,6 +71,7 @@ public abstract class CommandBase extends Command {
         SmartDashboard.putData(driveTrain);
         SmartDashboard.putData(shooter);
         SmartDashboard.putData(compressor);
+        SmartDashboard.putData(shooterLift);
     }
 
     public CommandBase(String name) {

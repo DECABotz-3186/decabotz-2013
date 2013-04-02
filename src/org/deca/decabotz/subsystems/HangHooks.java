@@ -12,16 +12,16 @@ import org.deca.decabotz.RobotMap;
  *
  * @author Sciencelab
  */
-public class RearLifter extends Subsystem {
+public class HangHooks extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
     Solenoid solenoidOneExtend;
     Solenoid solenoidOneRetract;
 
-    public RearLifter() {
-        solenoidOneExtend = new Solenoid(RobotMap.solenoidRearLiftExtendID);
-        solenoidOneRetract = new Solenoid(RobotMap.solenoidRearLiftRetractID);
+    public HangHooks() {
+        solenoidOneExtend = new Solenoid(RobotMap.solenoidHangHooksExtendID);
+        solenoidOneRetract = new Solenoid(RobotMap.solenoidHangHooksRetractID);
     }
 
     public void initDefaultCommand() {
@@ -29,12 +29,12 @@ public class RearLifter extends Subsystem {
 
     }
 
-    public void liftExtend() {
+    public void hookExtend() {
         solenoidOneExtend.set(true);
         solenoidOneRetract.set(false);
     }
 
-    public void liftRetract() {
+    public void hookRetract() {
         solenoidOneExtend.set(false);
         solenoidOneRetract.set(true);
     }

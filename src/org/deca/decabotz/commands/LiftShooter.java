@@ -8,12 +8,12 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class RetractRearLift extends CommandBase {
-
-    public RetractRearLift() {
+public class LiftShooter extends CommandBase {
+    
+    public LiftShooter() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(rearLifter);
+        requires(shooterLift);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class RetractRearLift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        rearLifter.liftRetract();
+        shooterLift.setLift(oi.getOperatorThrottle());
     }
 
     // Make this return true when this Command no longer needs to run execute()

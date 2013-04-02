@@ -8,12 +8,12 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class ExtendChassisHooks extends CommandBase {
+public class StopSpeedBoost extends CommandBase {
     
-    public ExtendChassisHooks() {
+    public StopSpeedBoost() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(chassisHooks);
+        requires(speedBoost);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class ExtendChassisHooks extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        chassisHooks.hookExtend();
+        speedBoost.stopBoost();
     }
 
     // Make this return true when this Command no longer needs to run execute()
