@@ -48,7 +48,7 @@ public class DriveTrain extends Subsystem {
     }
 
     public void tankDrive(double leftStick, double rightStick) {
-        drive.tankDrive(leftStick, rightStick);
+        drive.tankDrive(-leftStick, rightStick);
     }
     public void timedDrive(double speed, double turn, double time){
         drive.drive(-speed, turn);

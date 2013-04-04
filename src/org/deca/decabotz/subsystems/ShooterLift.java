@@ -30,14 +30,13 @@ public ShooterLift() throws CANTimeoutException{
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new LiftShooter());
     }
     public void setLift(double speedValue){
         try {
-            if(shooterLiftJag != null){
             shooterLiftJag.setX(speedValue);
-            }
         } catch (CANTimeoutException ex) {
-                ex.printStackTrace();
+            ex.printStackTrace();
         }
     }
 }

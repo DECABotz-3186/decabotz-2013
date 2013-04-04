@@ -8,21 +8,21 @@ package org.deca.decabotz.commands;
  *
  * @author Sciencelab
  */
-public class LiftShooter extends CommandBase {
+public class StopFrisbeePush extends CommandBase {
     
-    public LiftShooter() {
+    public StopFrisbeePush() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(shooterLift);
+        requires(frisbeePush);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        frisbeePush.stopFrisbeePush();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooterLift.setLift(oi.getOperatorStick());
     }
 
     // Make this return true when this Command no longer needs to run execute()

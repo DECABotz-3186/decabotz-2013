@@ -64,6 +64,9 @@ public abstract class CommandBase extends Command {
         
         speedBoost = new SpeedBoost();
         
+        frisbeePush = new FrisbeePush();
+        
+        // Init() all subsystems before oi
         oi = new OI();
          
 

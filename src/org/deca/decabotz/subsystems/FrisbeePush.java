@@ -7,6 +7,7 @@ package org.deca.decabotz.subsystems;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.deca.decabotz.RobotMap;
+import org.deca.decabotz.commands.StopFrisbeePush;
 
 /**
  *
@@ -22,6 +23,7 @@ public class FrisbeePush extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new StopFrisbeePush());
     }
     
     public FrisbeePush() {

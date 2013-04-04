@@ -10,6 +10,7 @@ import org.deca.decabotz.commands.RetractHangHooks;
 import org.deca.decabotz.commands.ShooterHigh;
 import org.deca.decabotz.commands.ShooterLow;
 import org.deca.decabotz.commands.ShooterStop;
+import org.deca.decabotz.commands.StopFrisbeePush;
 import org.deca.decabotz.commands.ToggleFrisbeePush;
 
 /**
@@ -20,11 +21,11 @@ public class OI {
     //button layout needs to be changed and things need to go to operatorGamepad
     Joystick operatorGamepad = new Joystick(RobotMap.operatorGamepadID);
     Joystick gamePad = new Joystick(RobotMap.gamepadID);
-    Button speedBoostActivateButton = new JoystickButton(operatorGamepad, RobotMap.speedBoostActivateID);
-    Button speedBoostDeactivateButton = new JoystickButton(operatorGamepad, RobotMap.speedBoostDeactivateID);
+    Button speedBoostActivateButton = new JoystickButton(gamePad, RobotMap.speedBoostActivateID);
+    Button speedBoostDeactivateButton = new JoystickButton(gamePad, RobotMap.speedBoostDeactivateID);
     Button hangHooksButton = new JoystickButton(gamePad, RobotMap.hangHooksActivateID);
-    Button shooterHighButton = new JoystickButton(gamePad, RobotMap.shooterHighID);
-    Button shooterLowButton = new JoystickButton(gamePad, RobotMap.shooterLowID);
+    Button shooterHighButton = new JoystickButton(operatorGamepad, RobotMap.shooterHighID);
+    Button shooterLowButton = new JoystickButton(operatorGamepad, RobotMap.shooterLowID);
     Button frisbeePushButton = new JoystickButton(operatorGamepad, RobotMap.frisbeePushID);
     //Button wedgePushExtendButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushExtendID);
     //Button wedgePushRetractButton = new JoystickButton(operatorGamepad, RobotMap.wedgePushRetractID);
@@ -58,6 +59,7 @@ public class OI {
         shooterLowButton.whenPressed(new ShooterLow());
         shooterLowButton.whenReleased(new ShooterStop());
         frisbeePushButton.whenPressed(new ToggleFrisbeePush());
+        frisbeePushButton.whenReleased(new StopFrisbeePush());
 
       
     }
