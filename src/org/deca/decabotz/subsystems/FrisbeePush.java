@@ -33,6 +33,11 @@ public class FrisbeePush extends Subsystem {
         frisbeePushMotor.set(Relay.Value.kForward);
         pushFrisbee = true;
     }
+    
+    public void reverseFrisbeePush() {
+        frisbeePushMotor.set(Relay.Value.kReverse);
+        pushFrisbee = true;
+    }
 
     public void stopFrisbeePush() {
         frisbeePushMotor.set(Relay.Value.kOff);
