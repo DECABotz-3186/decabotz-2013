@@ -23,14 +23,12 @@ import org.deca.decabotz.commands.CommandBase;
  * directory.
  */
 public class DecaBot extends IterativeRobot {
-    
 
     SendableChooser autoChooser;
-
     Command autonomousCommand;
     Command autoGoalCorner;
     Command autoGoalLeftCorner;
-    
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -42,19 +40,21 @@ public class DecaBot extends IterativeRobot {
         // Initialize all subsystems
         CommandBase.init();
         //autoGoalCorner = new AutoBackScoring();
-        
-    // Option to select the autonomous code from the SmartDashboard
-       autoChooser = new SendableChooser();
-       autoChooser.addDefault("Goal Front Corner", new AutoFrontScoring());
-       autoChooser.addObject("Back of Corner", new AutoBackScoring());
-       SmartDashboard.putData("Auto Mode? Bro", autoChooser);
+
+        // Option to select the autonomous code from the SmartDashboard
+        autoChooser = new SendableChooser();
+        autoChooser.addDefault("Goal Front Corner", new AutoFrontScoring());
+        autoChooser.addObject("Back of Corner", new AutoBackScoring());
+        SmartDashboard.putData("Auto Mode? Bro", autoChooser);
+        autonomousCommand = (Command) autoChooser.getSelected();
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
+
+
         autonomousCommand.start();
-        autonomousCommand = (Command) autoChooser.getSelected();
-        autoGoalCorner.start();
+
     }
 
     /**
@@ -70,6 +70,7 @@ public class DecaBot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         //autonomousCommand.cancel();
+        autonomousCommand.cancel();
         updateStatus();
     }
 
@@ -80,12 +81,12 @@ public class DecaBot extends IterativeRobot {
         Scheduler.getInstance().run();
         updateStatus();
     }
-    
-    public void disabledPeriod(){
+
+    public void disabledPeriod() {
         updateStatus();
     }
-    
-    public void updateStatus(){
+
+    public void updateStatus() {
         CommandBase.driveTrain.updateStatus();
         CommandBase.compressor.updateStatus();
     }

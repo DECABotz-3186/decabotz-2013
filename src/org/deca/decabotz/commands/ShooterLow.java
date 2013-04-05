@@ -4,6 +4,9 @@
  */
 package org.deca.decabotz.commands;
 
+import edu.wpi.first.wpilibj.Timer;
+import org.deca.decabotz.RobotMap;
+
 /**
  *
  * @author Sciencelab
@@ -19,11 +22,13 @@ public class ShooterLow extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        shooter.forwardLow();
+        Timer.delay(RobotMap.frisbeePushDelayTime);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.forwardLow();
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()

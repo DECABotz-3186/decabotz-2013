@@ -33,16 +33,16 @@ public class AutoFrontScoring extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
         addParallel(new FrontScorePitch());
-        addParallel(new ShooterLow());
-        Timer.delay(RobotMap.frisbeePushDelayTime);
+        addSequential(new ShooterLow());
+        
         addSequential(new ToggleFrisbeePush());
-        Timer.delay(RobotMap.frisbeePushTime);
+        
         addSequential(new StopFrisbeePush());
-        Timer.delay(RobotMap.frisbeePushDelayTime);
+        
         addSequential(new ToggleFrisbeePush());
-        Timer.delay(RobotMap.frisbeePushTime);
-        addSequential(new ToggleFrisbeePush());
+        
+        addSequential(new StopFrisbeePush());
         addParallel(new ShooterStop());
-        addSequential(new StopFrisbeePush());
+        
     }
 }
