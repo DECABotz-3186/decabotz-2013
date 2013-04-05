@@ -7,14 +7,15 @@ package org.deca.decabotz.commands;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.deca.decabotz.RobotMap;
+import org.deca.decabotz.commands.autonomous.FrontScorePitch;
 
 /**
  *
  * @author Sciencelab
  */
-public class AutoLeftGoalCorner extends CommandGroup {
+public class AutoFrontScoring extends CommandGroup {
     
-    public AutoLeftGoalCorner() {
+    public AutoFrontScoring() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -31,10 +32,17 @@ public class AutoLeftGoalCorner extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        addSequential(new AutonomousDriveLeft());
-        Timer.delay(2);
-        addSequential(new AutonomousDriveBackward());
-        Timer.delay(RobotMap.autonomousShooterTime);
-        addSequential(new ShooterStop());
+        addParallel(new FrontScorePitch());
+        addParallel(new ShooterLow());
+        Timer.delay(RobotMap.frisbeePushDelayTime);
+        addSequential(new ToggleFrisbeePush());
+        Timer.delay(RobotMap.frisbeePushTime);
+        addSequential(new StopFrisbeePush());
+        Timer.delay(RobotMap.frisbeePushDelayTime);
+        addSequential(new ToggleFrisbeePush());
+        Timer.delay(RobotMap.frisbeePushTime);
+        addSequential(new ToggleFrisbeePush());
+        addParallel(new ShooterStop());
+        addSequential(new StopFrisbeePush());
     }
 }

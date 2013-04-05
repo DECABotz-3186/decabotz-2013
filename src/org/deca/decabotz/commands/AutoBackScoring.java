@@ -12,9 +12,9 @@ import org.deca.decabotz.RobotMap;
  *
  * @author Sciencelab
  */
-public class AutoGoalCorner extends CommandGroup {
+public class AutoBackScoring extends CommandGroup {
     
-    public AutoGoalCorner() {
+    public AutoBackScoring() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -31,8 +31,18 @@ public class AutoGoalCorner extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        addSequential(new AutonomousDriveBackward());
-        Timer.delay(RobotMap.autonomousShooterTime);
-        addSequential(new ShooterStop());
+        addParallel(new ShooterHigh());
+        Timer.delay(RobotMap.frisbeePushDelayTime);
+        addSequential(new ToggleFrisbeePush());
+        Timer.delay(RobotMap.frisbeePushTime);
+        addSequential(new StopFrisbeePush());
+        Timer.delay(RobotMap.frisbeePushDelayTime);
+        addSequential(new ToggleFrisbeePush());
+        Timer.delay(RobotMap.frisbeePushTime);
+        addSequential(new ToggleFrisbeePush());
+        addParallel(new ShooterStop());
+        addSequential(new StopFrisbeePush());
+        
+        
     }
 }

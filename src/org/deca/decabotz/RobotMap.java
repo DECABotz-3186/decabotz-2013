@@ -48,6 +48,8 @@ public class RobotMap {
                                 autonomousDriveLeftTurn = 1,
                                 autonomousDriveLeftTime = 1,
                                 frisbeePushTime = 0.714,
-                                shooterLiftID = 1;
+                                frisbeePushDelayTime = 3,
+                                shooterLiftID = 1,
+                                frontAutoAngleTime = 1.0;
                                    
 }

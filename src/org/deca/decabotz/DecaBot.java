@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.deca.decabotz.commands.AutoGoalCorner;
-import org.deca.decabotz.commands.AutoLeftGoalCorner;
+import org.deca.decabotz.commands.AutoBackScoring;
+import org.deca.decabotz.commands.AutoFrontScoring;
 import org.deca.decabotz.commands.CommandBase;
 
 /**
@@ -24,12 +24,12 @@ import org.deca.decabotz.commands.CommandBase;
  */
 public class DecaBot extends IterativeRobot {
     
-    //Command autonomousCommand;
-    //SendableChooser autoChooser;
 
-    //Command autonomousCommand;
-    //Command autoGoalCorner;
-    //Command autoGoalLeftCorner;
+    SendableChooser autoChooser;
+
+    Command autonomousCommand;
+    Command autoGoalCorner;
+    Command autoGoalLeftCorner;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -41,20 +41,20 @@ public class DecaBot extends IterativeRobot {
 
         // Initialize all subsystems
         CommandBase.init();
-        //autoGoalCorner = new AutoGoalCorner();
+        //autoGoalCorner = new AutoBackScoring();
         
     // Option to select the autonomous code from the SmartDashboard
-       //autoChooser = new SendableChooser();
-       //autoChooser.addDefault("Goal Corner", new AutoGoalCorner());
-       //autoChooser.addObject("Left Side of Goal", new AutoLeftGoalCorner());
-       //SmartDashboard.putData("Autonomous mode chooser", autoChooser);
+       autoChooser = new SendableChooser();
+       autoChooser.addDefault("Goal Front Corner", new AutoFrontScoring());
+       autoChooser.addObject("Back of Corner", new AutoBackScoring());
+       SmartDashboard.putData("Auto Mode? Bro", autoChooser);
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        //autonomousCommand.start();
-        //autonomousCommand = (Command) autoChooser.getSelected();
-        //autoGoalCorner.start();
+        autonomousCommand.start();
+        autonomousCommand = (Command) autoChooser.getSelected();
+        autoGoalCorner.start();
     }
 
     /**
