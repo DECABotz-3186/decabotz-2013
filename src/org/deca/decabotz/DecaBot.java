@@ -52,8 +52,9 @@ public class DecaBot extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
 
-
-        autonomousCommand.start();
+        if (autonomousCommand != null) {
+            autonomousCommand.start();
+        }
 
     }
 

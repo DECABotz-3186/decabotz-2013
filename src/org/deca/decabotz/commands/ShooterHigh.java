@@ -18,11 +18,12 @@ public class ShooterHigh extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        shooter.forwardHigh();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.forwardHigh();
+        
     }
     
 

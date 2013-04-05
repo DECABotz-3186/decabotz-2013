@@ -4,9 +4,6 @@
  */
 package org.deca.decabotz.commands;
 
-import edu.wpi.first.wpilibj.Timer;
-import org.deca.decabotz.RobotMap;
-
 /**
  *
  * @author Sciencelab
@@ -22,7 +19,6 @@ public class ToggleFrisbeePush extends CommandBase {
     // Called just before this Command runs the first time
     protected void initialize() {
         frisbeePush.startFrisbeePush();
-        Timer.delay(RobotMap.frisbeePushTime);
     }
 
     // Called repeatedly when this Command is scheduled to run

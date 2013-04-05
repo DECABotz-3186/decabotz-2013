@@ -4,7 +4,6 @@
  */
 package org.deca.decabotz.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.deca.decabotz.RobotMap;
 import org.deca.decabotz.commands.autonomous.FrontScorePitch;
@@ -32,17 +31,14 @@ public class AutoFrontScoring extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        addParallel(new FrontScorePitch());
-        addSequential(new ShooterLow());
+        addParallel(new FrontScorePitch(), 4);
+        addSequential(new ShooterLow(), RobotMap.frisbeePushDelayTime);
         
-        addSequential(new ToggleFrisbeePush());
-        
-        addSequential(new StopFrisbeePush());
-        
-        addSequential(new ToggleFrisbeePush());
-        
-        addSequential(new StopFrisbeePush());
-        addParallel(new ShooterStop());
+        for (int x =0; x < 4; x++) {
+            addSequential(new ToggleFrisbeePush(), RobotMap.frisbeePushTime);
+            addSequential(new StopFrisbeePush(), RobotMap.frisbeePushDelayTime);
+        }
+        addParallel(new ShooterStop(), 2);
         
     }
 }
