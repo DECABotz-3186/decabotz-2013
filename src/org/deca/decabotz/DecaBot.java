@@ -43,8 +43,8 @@ public class DecaBot extends IterativeRobot {
 
         // Option to select the autonomous code from the SmartDashboard
         autoChooser = new SendableChooser();
-        autoChooser.addDefault("Goal Front Corner", new AutoFrontScoring());
-        autoChooser.addObject("Back of Corner", new AutoBackScoring());
+        autoChooser.addObject("Goal Front Corner", new AutoFrontScoring());
+        autoChooser.addDefault("Back of Corner", new AutoBackScoring());
         SmartDashboard.putData("Auto Mode? Bro", autoChooser);
         autonomousCommand = (Command) autoChooser.getSelected();
     }

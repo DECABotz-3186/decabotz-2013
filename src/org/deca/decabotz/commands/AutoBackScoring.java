@@ -5,6 +5,7 @@
 package org.deca.decabotz.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 import org.deca.decabotz.RobotMap;
 import org.deca.decabotz.commands.autonomous.BackScorePitch;
 
@@ -33,6 +34,7 @@ public class AutoBackScoring extends CommandGroup {
         // arm.
         addParallel(new BackScorePitch(), 4);
         addSequential(new ShooterLow(), RobotMap.frisbeePushDelayTime);
+        addSequential(new WaitCommand(2.0), 7);
         
         for (int x =0; x < 4; x++) {
             addSequential(new ToggleFrisbeePush(), RobotMap.frisbeePushTime);
